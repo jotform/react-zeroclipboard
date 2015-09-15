@@ -101,7 +101,7 @@ function findOrLoadZeroClipboard(){
     else {
         // load zeroclipboard from CDN
         // in production we want the minified version
-        var ZERO_CLIPBOARD_SOURCE = 'http://www.jotform.com/js/vendor/zeroclipboard/ZeroClipboard';
+        var ZERO_CLIPBOARD_SOURCE = '//www.jotform.com/js/vendor/zeroclipboard/ZeroClipboard';
         loadScript(ZERO_CLIPBOARD_SOURCE + '.min.js', handleZeroClipLoad);
     }
 }
