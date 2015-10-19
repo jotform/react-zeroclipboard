@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var loadScript = require('./loadScript');
 var ZeroClipboard, client;
 
@@ -142,7 +143,7 @@ var ReactZeroClipboard = React.createClass({
         this.eventRemovers = [];
         this.ready(function(){
             if (!this.isMounted()) return;
-            var el = React.findDOMNode(this);
+            var el = ReactDOM.findDOMNode(this);
             client.clip(el);
 
             // translate our props to ZeroClipboard events, and add them to
@@ -162,7 +163,7 @@ var ReactZeroClipboard = React.createClass({
     },
     componentWillUnmount: function(){
         if (client) {
-            client.unclip(React.findDOMNode(this));
+            client.unclip(ReactDOM.findDOMNode(this));
         }
 
         // remove our event listener
